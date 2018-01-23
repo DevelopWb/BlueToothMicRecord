@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:Android="http://schemas.android.com/tools"
+    android:id="@+id/line1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_bg_shape"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/ftp_ip"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/edit_text"
+            android:digits="1234567890."
+            android:gravity="center"
+            android:hint="FTP地址"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp"
+            android:textColor="#131313"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="#131313"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/ftp_port"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@android:drawable/edit_text"
+            android:digits="1234567890"
+            android:gravity="center"
+            android:hint="端口"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:paddingRight="10dp"
+            android:textColor="#131313"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+
+
+        <EditText
+            android:id="@+id/database"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@android:drawable/edit_text"
+            android:gravity="center"
+            android:hint="数据库"
+            android:singleLine="true"
+            android:textColor="#131313"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="#33B5E5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center" >
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/setting_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="#FCFCFC"
+            android:text="取消"
+            android:textColor="#33B5E5" />
+
+        <View
+            android:layout_width="2dip"
+            android:layout_height="match_parent"
+            android:background="#33B5E5" />
+
+        <Button
+            android:id="@+id/setting_ok"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#FCFCFC"
+            android:text="确定"
+            android:textColor="#33B5E5" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
