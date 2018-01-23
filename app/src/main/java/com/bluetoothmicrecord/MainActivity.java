@@ -7,6 +7,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
+import android.net.NetworkRequest;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -132,6 +137,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 PubUtils.upload = false;
             }
         });
+
+
+//        initNetWork();
+    }
+
+    private void initNetWork() {
+      final  ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkRequest.Builder builder = new NetworkRequest.Builder();
+        NetworkRequest request = builder.addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
+                .addTransportType(NetworkCapabilities.TRANSPORT_CELLULAR)
+                .build();
+        cm.requestNetwork(request, new ConnectivityManager.NetworkCallback() {
+            @Override
+            public void onAvailable(Network network) {
+                Log.v("88888888", "onAvailable(): network " + network);
+                // do something
+
+                NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+                boolean a = networkInfo.isConnected();
+                Log.v("88888888", "isConnected(): network " + a);
+                boolean b = networkInfo.isAvailable();
+                Log.v("88888888", "isConnected(): network " + a);
+            }
+
+        });
+
     }
 
 
